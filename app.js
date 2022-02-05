@@ -3,7 +3,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   // let nombre = req.query.name;
-  let nombre = req.param('name');
+  let nombre = req.param('nombre');
   if(nombre == null || nombre == ''){
       nombre = "desconocido";
   }
