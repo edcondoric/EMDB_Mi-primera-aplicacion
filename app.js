@@ -1,12 +1,18 @@
 const express = require('express');
 const app = express();
 
+const capitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
 app.get('/makers/:nombre', (req, res) => {
   // let nombre = req.query.name;
-  const { nombre } = req.params;
+  let { nombre } = req.params;
   if(nombre == null || nombre == ''){
       nombre = "desconocido";
   }
+  nombre = capitalize(nombre);
   res.send('<h1>Hola ' + nombre + '!</h1>');
 });
 
