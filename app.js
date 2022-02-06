@@ -1,11 +1,32 @@
 const express = require('express');
 const app = express();
+app.use(express.urlencoded());
 
 const capitalize = (s) => {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
+app.get('/',(req, res) => {
+	let valor = `
+	<form action="/" method="post">
+	<input type="text" name="name"> 
+	<button type="submit">Enviar</button>
+	</form>`;
+	res.send(valor);
+});
+
+app.post('/',(req, res) => {
+	//let name = req.body.name;
+	let aux = req.body.name;
+	res.send('<h1> Hola ' + aux + '</h1>');
+});
+
+
+
+/*
+
+Reto 2
 
 app.get('/',(req, res) => {
 	
@@ -17,6 +38,8 @@ app.get('/',(req, res) => {
 	res.send(valor);
 });
 
+
+*/
 
 
 
