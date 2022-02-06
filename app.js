@@ -19,7 +19,7 @@ app.get('/',(req, res) => {
 app.post('/',(req, res) => {
 	//let name = req.body.name;
 	let aux = req.body.name;
-	res.send('<h1> Hola ' + aux + '</h1>');
+	res.send('<h1> Hola ' + aux + '!</h1>');
 });
 
 
