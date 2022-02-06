@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-app.use(express.urlencoded());
+// app.use(express.urlencoded());
 
 const capitalize = (s) => {
   if (typeof s !== 'string') return ''
