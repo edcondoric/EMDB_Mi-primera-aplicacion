@@ -7,6 +7,13 @@ const capitalize = (s) => {
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
+app.get('/', (req, res) => {
+  res.send(req.header('User-Agent'));
+})
+
+/*
+Reto 3
+
 app.get('/',(req, res) => {
 	let valor = `
 	<form action="/" method="post">
@@ -22,6 +29,8 @@ app.post('/',(req, res) => {
 	res.send('<h1>Hola ' + aux + '!</h1>');
 });
 
+
+*/
 
 
 /*
